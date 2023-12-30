@@ -139,8 +139,68 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let str = '';
+  let NEW_STR = '';
+  const MINUS = 'minus';
+  const POINT = 'point';
+  const ONE = 'one';
+  const TWO = 'two';
+  const THREE = 'three';
+  const FOUR = 'four';
+  const FIVE = 'five';
+  const SIX = 'six';
+  const SEVEN = 'seven';
+  const EIGHT = 'eight';
+  const NINE = 'nine';
+  const ZERO = 'zero';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    switch (numberStr[i]) {
+      case '-':
+        str += `${MINUS} `;
+        break;
+      case '.':
+      case ',':
+        str += `${POINT} `;
+        break;
+      case '1':
+        str += `${ONE} `;
+        break;
+      case '2':
+        str += `${TWO} `;
+        break;
+      case '3':
+        str += `${THREE} `;
+        break;
+      case '4':
+        str += `${FOUR} `;
+        break;
+      case '5':
+        str += `${FIVE} `;
+        break;
+      case '6':
+        str += `${SIX} `;
+        break;
+      case '7':
+        str += `${SEVEN} `;
+        break;
+      case '8':
+        str += `${EIGHT} `;
+        break;
+      case '9':
+        str += `${NINE} `;
+        break;
+      case '0':
+        str += `${ZERO} `;
+        break;
+      default:
+        break;
+    }
+  }
+  for (let i = 0; i < str.length - 1; i += 1) {
+    NEW_STR += str[i];
+  }
+  return NEW_STR;
 }
 
 /**
@@ -208,8 +268,14 @@ function getIndexOf(str, letter) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  const STRING = num.toPrecision();
+  for (let i = 0; i < STRING.length; i += 1) {
+    if (digit === +STRING[i]) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -227,6 +293,15 @@ function isContainNumber(/* num, digit */) {
  */
 function getBalanceIndex(/* arr */) {
   throw new Error('Not implemented');
+  // for (let i = 0; i < arr.length; i += 1) {
+  //   if (
+  //     (arr[i] + arr[i + 1] === arr[i + 3] && i === 0) ||
+  //     (arr[i] + arr[i + 1] === arr[i + 3] + arr[i + 4] && i === 0)
+  //   ) {
+  //     return i + 2;
+  //   }
+  // }
+  // return -1;
 }
 
 /**
@@ -271,6 +346,13 @@ function getSpiralMatrix(/* size */) {
  */
 function rotateMatrix(/* matrix */) {
   throw new Error('Not implemented');
+  // const ARR_LENGTH = matrix[0].length;
+  // for (let i = 0; i < ARR_LENGTH; i += 1) {
+  //   for (let j = matrix.length - 1; j >= 0; j -= 1) {
+  //     matrix[i][j] = matrix[i][j];
+  //   }
+  // }
+  // return matrix;
 }
 
 /**
@@ -289,6 +371,18 @@ function rotateMatrix(/* matrix */) {
  */
 function sortByAsc(/* arr */) {
   throw new Error('Not implemented');
+  // let temp;
+  // const NEW_ARR = [...arr];
+  // for (let i = 0; i < NEW_ARR.length; i += 1) {
+  //   for (let j = 0; j < NEW_ARR.length - i; j += 1) {
+  //     if (NEW_ARR[j] > NEW_ARR[j + 1]) {
+  //       temp = NEW_ARR[j];
+  //       NEW_ARR[j] = NEW_ARR[j + 1];
+  //       NEW_ARR[j + 1] = temp;
+  //     }
+  //   }
+  // }
+  // return NEW_ARR;
 }
 
 /**
@@ -331,6 +425,16 @@ function shuffleChar(/* str, iterations */) {
  */
 function getNearestBigger(/* number */) {
   throw new Error('Not implemented');
+  // let array = [];
+  // while(number > 0){
+  //   array.unshift(number % 10);
+  //   number = number / 10 | 0;
+  // }
+  // console.log(array.length);
+  // for (let i = array.length - 1; i >= 0; i -= 1) {
+  //
+  // }
+  // return array;
 }
 
 module.exports = {
