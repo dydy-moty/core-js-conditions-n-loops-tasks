@@ -120,8 +120,18 @@ function isIsoscelesTriangle(a, b, c) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  let newNum = num;
+  const ARR_NUM = [10, 9, 5, 4, 1];
+  const ARR_ROMES = ['X', 'IX', 'V', 'IV', 'I'];
+  let result = '';
+  for (let i = 0; i < ARR_NUM.length; i += 1) {
+    while (ARR_NUM[i] <= newNum) {
+      result += ARR_ROMES[i];
+      newNum -= ARR_NUM[i];
+    }
+  }
+  return result;
 }
 
 /**
@@ -293,15 +303,6 @@ function isContainNumber(num, digit) {
  */
 function getBalanceIndex(/* arr */) {
   throw new Error('Not implemented');
-  // for (let i = 0; i < arr.length; i += 1) {
-  //   if (
-  //     (arr[i] + arr[i + 1] === arr[i + 3] && i === 0) ||
-  //     (arr[i] + arr[i + 1] === arr[i + 3] + arr[i + 4] && i === 0)
-  //   ) {
-  //     return i + 2;
-  //   }
-  // }
-  // return -1;
 }
 
 /**
@@ -327,6 +328,14 @@ function getBalanceIndex(/* arr */) {
  */
 function getSpiralMatrix(/* size */) {
   throw new Error('Not implemented');
+  // const ARRAY = [];
+  // for (let i = 0; i < size; i += 1) {
+  //   ARRAY[i] = [];
+  //   for (let j = 0; j < size; j += 1) {
+  //     ARRAY[i][j] = i * size + j + 1;
+  //   }
+  // }
+  // return ARRAY;
 }
 
 /**
@@ -346,13 +355,6 @@ function getSpiralMatrix(/* size */) {
  */
 function rotateMatrix(/* matrix */) {
   throw new Error('Not implemented');
-  // const ARR_LENGTH = matrix[0].length;
-  // for (let i = 0; i < ARR_LENGTH; i += 1) {
-  //   for (let j = matrix.length - 1; j >= 0; j -= 1) {
-  //     matrix[i][j] = matrix[i][j];
-  //   }
-  // }
-  // return matrix;
 }
 
 /**
@@ -371,14 +373,15 @@ function rotateMatrix(/* matrix */) {
  */
 function sortByAsc(/* arr */) {
   throw new Error('Not implemented');
-  // let temp;
   // const NEW_ARR = [...arr];
-  // for (let i = 0; i < NEW_ARR.length; i += 1) {
-  //   for (let j = 0; j < NEW_ARR.length - i; j += 1) {
-  //     if (NEW_ARR[j] > NEW_ARR[j + 1]) {
-  //       temp = NEW_ARR[j];
-  //       NEW_ARR[j] = NEW_ARR[j + 1];
-  //       NEW_ARR[j + 1] = temp;
+  // for (let j = NEW_ARR.length - 1; j > 0; j -= 1) {
+  //   for (let i = 0; i < j; i += 1) {
+  //     if (NEW_ARR[i] !== -1) {
+  //       if (NEW_ARR[i] > NEW_ARR[i + 1]) {
+  //         const temp = NEW_ARR[i];
+  //         NEW_ARR[i] = NEW_ARR[i + 1];
+  //         NEW_ARR[i + 1] = temp;
+  //       }
   //     }
   //   }
   // }
@@ -425,16 +428,19 @@ function shuffleChar(/* str, iterations */) {
  */
 function getNearestBigger(/* number */) {
   throw new Error('Not implemented');
-  // let array = [];
-  // while(number > 0){
-  //   array.unshift(number % 10);
-  //   number = number / 10 | 0;
+  // const ARRAY = [];
+  // let newNum = number;
+  // let temp = 0;
+  // while (newNum > 0) {
+  //   ARRAY.unshift(newNum % 10);
+  //   newNum = (newNum - newNum % 10) / 10;
   // }
-  // console.log(array.length);
-  // for (let i = array.length - 1; i >= 0; i -= 1) {
-  //
+  // for (let i = ARRAY.length - 1; i > 0; i -= 1) {
+  //   temp = ARRAY[i];
+  //   ARRAY[i] = ARRAY[i - 1];
+  //   ARRAY[i - 1] = temp;
   // }
-  // return array;
+  // return +ARRAY.join('');
 }
 
 module.exports = {
